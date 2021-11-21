@@ -1,10 +1,6 @@
 <template>
   <div class="form">
-    <form action="">
-      <label for="">地址:</label><input type="text" v-model="formData.address">
-      <br>
-      <label for="">端口:</label><input type="text" v-model.number="formData.port">
-    </form>
+
   </div>
 </template>
 
@@ -16,7 +12,9 @@ interface FormData {
   port: number
 }
 
-@Component
+@Component({
+  components: {}
+})
 export default class Form extends Vue {
   private formData: FormData = {
     address: "",
@@ -38,20 +36,23 @@ export default class Form extends Vue {
       browser.runtime.sendMessage(
           "addon@example.com",
           {name: "FORM", data: {formData}, dst: "background"}
-      ).then(res => {
-        console.log("send msg:", res);
+      ).then(() => {
+        console.log("send msg success");
       }).catch(err => {
         console.log("send msg err:", err);
       })
     }
   }
+
+  get isAddressValid() {
+    return /(192).(168)(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){2}/.test(this.formData.address);
+  }
+
+  get isPortValid() {
+    return this.formData.port > 0 && this.formData.port < 65536
+  }
 }
 </script>
 
 <style lang="scss">
-  div.form{
-    form{
-
-    }
-  }
 </style>

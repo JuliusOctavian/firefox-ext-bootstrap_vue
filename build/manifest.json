@@ -1,23 +1,29 @@
 {
-
   "description": "Adds a solid red border to all webpages matching mozilla.org. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#borderify",
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "magnetQrCode",
   "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
+  "homepage_url": "https://github.com/JuliusOctavian/firefox-qrcode-extension.git",
   "icons": {
     "48": "icons/icon.svg"
   },
-
   "content_scripts": [
     {
-      "matches": ["*://*.javbus.com/star/2su*"],
-      "js": ["content/index.js"],
-      "css":["content/index.css"]
+      "matches": [
+        "https://www.meijutt.tv/content/*.html"
+      ],
+      "js": [
+        "content/index.js"
+      ],
+      "css": [
+        "content/index.css"
+      ]
     }
   ],
-    "background": {
-    "scripts": ["background/index.js"]
+  "background": {
+    "scripts": [
+      "background/index.js"
+    ]
   },
   "permissions": [
     "tabs",
@@ -25,19 +31,17 @@
     "notifications",
     "webRequest",
     "webRequestBlocking",
-    "storage",
-    "http://*/*",
-    "https://*/*"
+    "storage"
   ],
   "browser_action": {
-    "default_title": "Baidutify",
+    "default_title": "magnetQrCode",
     "default_popup": "popup/index.html"
   },
   "browser_specific_settings": {
-  "gecko": {
-    "id": "addon@example.com",
-    "strict_min_version": "42.0"
-  }
-},
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://*.amap.com/; object-src 'self'"
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
