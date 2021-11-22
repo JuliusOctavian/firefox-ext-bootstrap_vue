@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Component, Vue } from "vue-property-decorator";
 import Form from "./template/views/From.vue";
 
@@ -15,13 +14,10 @@ import Form from "./template/views/From.vue";
   }
 })
 export default class App extends Vue {
-  // eslint-disable-next-line class-methods-use-this
   beforeCreate() {
     document.oncontextmenu = function(event) {
-      event.preventDefault();
+  event.preventDefault();
     };
-
-    setTimeout(() => {});
   }
 }
 </script>
