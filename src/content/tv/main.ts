@@ -1,6 +1,5 @@
-import QRCode, {QRCodeOptions} from "qrcode";
+import QRCode, { QRCodeOptions } from "qrcode";
 import "./index.scss";
-
 
 let box: HTMLDivElement | undefined;
 let container: HTMLCanvasElement | undefined;
@@ -14,7 +13,7 @@ let magnet: string | undefined;
 
 function paint(text: string, width: number) {
   if (container) {
-    QRCode.toCanvas(container, text, {width} as QRCodeOptions)
+    QRCode.toCanvas(container, text, { width } as QRCodeOptions)
       .then(() => {
         console.log("success");
       })
@@ -75,7 +74,7 @@ sources?.forEach((node) => {
         // eslint-disable-next-line no-param-reassign
         strong.style.backgroundColor = "blue";
 
-        const {pageX, pageY} = event;
+        const { pageX, pageY } = event;
 
         const anchor = strong.querySelector("a") as HTMLAnchorElement;
         magnet = anchor.href;
@@ -106,4 +105,3 @@ sources?.forEach((node) => {
     };
   });
 });
-

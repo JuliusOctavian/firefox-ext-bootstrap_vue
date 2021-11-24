@@ -1,6 +1,15 @@
 <template>
   <div class="form">
-
+    <form action="" class="">
+      <div class="form-item">
+        <label for="address">address:</label>
+        <input type="text" v-model="formData.address">
+      </div>
+      <div class="form-item">
+        <label for="port">port:</label>
+        <input type="text" v-model.number="formData.port">
+      </div>
+    </form>
   </div>
 </template>
 
@@ -30,6 +39,7 @@ export default class Form extends Vue {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   @Watch("formData", {deep: true})
   onFormDataChange(formData: FormData) {
     if (formData) {
@@ -54,5 +64,18 @@ export default class Form extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.form {
+  form {
+    .form-item {
+      label {
+        display: block;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}
 </style>

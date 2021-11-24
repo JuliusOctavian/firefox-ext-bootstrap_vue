@@ -12,6 +12,16 @@ module.exports = {
     sourceType: "module"
   },
   plugins: ["vue", "@typescript-eslint"],
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [
+          ["@", "./src/popup"]
+        ]
+      },
+      extensions: [".js", ".ts",".vue"]
+    }
+  },
   rules: {
     quotes: [1, "double"],
     "comma-dangle": [2, "never"],

@@ -3,14 +3,15 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
+const {VueLoaderPlugin} = require("vue-loader");
 
 module.exports = {
   mode: "development",
   entry: {
-    content: "./src/content/main.ts",
     background: "./src/background/main.ts",
-    popup: "./src/popup/main.ts"
+    popup: "./src/popup/main.ts",
+    "content/baidu": "./src/content/baidu/main.ts",
+    "content/tv": "./src/content/tv/main.ts"
   },
   output: {
     filename: "[name]/index.js",
@@ -51,7 +52,7 @@ module.exports = {
           }
         ]
       },
-      { test: /\.ttf|eot|svg|woff|woff2$/, use: "url-loader" },
+      {test: /\.ttf|eot|svg|woff|woff2$/, use: "url-loader"},
       {
         test: /\.vue$/,
         loader: "vue-loader" // 处理以.vue结尾的文件
@@ -60,11 +61,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".vue", ".tsx", ".ts", ".js"]
+    extensions: [".vue", ".tsx", ".ts", ".js"],
+    alias: {
+      "@": path.resolve(__dirname, "src/popup")
+    }
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({ filename: "[name]/index.css" }),
+    new MiniCssExtractPlugin({filename: "[name]/index.css"}),
     new CopyWebpackPlugin({
       patterns: [
         {

@@ -1,12 +1,12 @@
 <template>
   <div class="app">
-    <Form />
+    <Form/>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import Form from "./template/views/From.vue";
+import {Component, Vue} from "vue-property-decorator";
+import Form from "@/template/views/From.vue";
 
 @Component({
   components: {
@@ -14,9 +14,10 @@ import Form from "./template/views/From.vue";
   }
 })
 export default class App extends Vue {
+  // eslint-disable-next-line class-methods-use-this
   beforeCreate() {
-    document.oncontextmenu = function(event) {
-  event.preventDefault();
+    document.oncontextmenu = function (event) {
+      event.preventDefault();
     };
   }
 }
@@ -31,10 +32,12 @@ export default class App extends Vue {
 body {
   z-index: 99999;
   overflow: hidden;
-}
 
-.app {
-  width: 500px;
-  height: 350px;
+  padding: 10px;
+  user-select: none;
+  .app {
+    width: 500px;
+    height: 350px;
+  }
 }
 </style>

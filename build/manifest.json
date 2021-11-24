@@ -10,13 +10,24 @@
   "content_scripts": [
     {
       "matches": [
+        "https://*.baidu.com/*"
+      ],
+      "js": [
+        "content/baidu/index.js"
+      ],
+      "css": [
+        "content/baidu/index.css"
+      ]
+    },
+    {
+      "matches": [
         "https://www.meijutt.tv/content/*.html"
       ],
       "js": [
-        "content/index.js"
+        "content/tv/index.js"
       ],
       "css": [
-        "content/index.css"
+        "content/tv/index.css"
       ]
     }
   ],
@@ -43,5 +54,5 @@
       "strict_min_version": "42.0"
     }
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }
