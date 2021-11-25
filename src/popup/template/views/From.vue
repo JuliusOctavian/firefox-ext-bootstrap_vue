@@ -2,7 +2,7 @@
   <div class="form">
     <form action="" class="">
       <div class="form-item">
-        <label for="address">address:</label>
+        <label for="address"><i class="fas fa-user"></i>address:</label>
         <input type="text" v-model="formData.address">
       </div>
       <div class="form-item">
