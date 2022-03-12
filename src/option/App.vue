@@ -1,17 +1,16 @@
 <template>
   <div class="app">
-    <Home/>
+    <form action="">
+      <label for="">Name:</label>
+      <input type="text">
+    </form>
   </div>
 </template>
 
 <script lang="ts">
 import {Options, Vue} from "vue-class-component";
-import Home from "@/popup/views/Home.vue";
 
 @Options({
-  components: {
-    Home
-  }
 })
 export default class App extends Vue {
 }
@@ -30,18 +29,14 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 }
 
 body {
-  background-color: bisque;
-
   z-index: 99999;
   overflow: hidden;
 
   padding: 10px;
   user-select: none;
 
-  box-shadow: 10px 10px 10px #888888;
-
   .app {
-    width: 400px;
+    width: 500px;
     height: 350px;
   }
 }

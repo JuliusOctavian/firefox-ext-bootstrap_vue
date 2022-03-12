@@ -5,7 +5,7 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: ["plugin:vue/essential", "airbnb-base", "prettier"],
+  extends: ["plugin:vue/essential"],
   parserOptions: {
     ecmaVersion: 13,
     parser: "@typescript-eslint/parser",
@@ -16,7 +16,7 @@ module.exports = {
     "import/resolver": {
       alias: {
         map: [
-          ["@", "./src/popup"]
+          ["@", "./src"]
         ]
       },
       extensions: [".js", ".ts",".vue"]

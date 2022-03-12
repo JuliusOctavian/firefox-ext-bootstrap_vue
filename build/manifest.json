@@ -49,6 +49,9 @@
     "default_title": "magnetQrCode",
     "default_popup": "popup/index.html"
   },
+  "options_ui": {
+    "page": "option/index.html"
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "addon@example.com",
