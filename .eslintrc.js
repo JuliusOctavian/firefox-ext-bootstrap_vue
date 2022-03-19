@@ -5,9 +5,13 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: ["plugin:vue/essential"],
+  extends: [
+    "plugin:vue/vue3-essential",
+    "eslint:recommended",
+    "@vue/typescript/recommended"
+  ],
   parserOptions: {
-    ecmaVersion: 13,
+    ecmaVersion: 20,
     parser: "@typescript-eslint/parser",
     sourceType: "module"
   },
@@ -19,7 +23,7 @@ module.exports = {
           ["@", "./src"]
         ]
       },
-      extensions: [".js", ".ts",".vue"]
+      extensions: [".js", ".ts", ".vue"]
     }
   },
   rules: {
