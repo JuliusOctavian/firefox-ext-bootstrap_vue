@@ -14,6 +14,8 @@ import Home from "@/popup/views/Home.vue";
   }
 })
 export default class App extends Vue {
+  created(){
+  }
 }
 </script>
 
